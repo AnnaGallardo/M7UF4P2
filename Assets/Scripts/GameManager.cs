@@ -31,14 +31,14 @@ public class GameManager : MonoBehaviour
         Orbs++;
         OrbText.text = "Orbs: " + Orbs;
     }
-    public void CoinCollected()
+    public void CoinCollected(int i)
 
     {
-        Coins++;
+        Coins += i;
         CoinText.text = "Coins: " + Coins;
     }
 
-   public void ItemCollected (int id)
+   public void ItemCollected (Sprite sprite, int id)
 
     {
         Items[id].gameObject.GetComponent<Image>().color = Color.white; 

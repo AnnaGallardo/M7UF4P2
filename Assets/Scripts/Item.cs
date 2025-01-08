@@ -5,10 +5,12 @@ using UnityEngine;
 public class Item : MonoBehaviour, ICollectable
 {
     public int ID;
+    public Sprite Sprite;
+    public ItemScriptableObject itemSO;
 
     public void OnCollected()
     {
-        GameManager.gameManager.ItemCollected(ID);
+        GameManager.gameManager.ItemCollected(Sprite, ID);
         Destroy(gameObject);
     }
 }
