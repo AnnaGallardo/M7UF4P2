@@ -18,7 +18,7 @@ public class QuestionManager : MonoBehaviour
     void GenerateQuestion()
     {
         int BotonRespuestaCorrecta = Random.Range(0,2);
-        int BanderaCorrecta = Random.Range(0, options.Length);
+        int BanderaCorrecta = Random.Range(0, OptionsSO.Length);
         
         for(int i=0; i<options.Length; i++)
         {
@@ -34,7 +34,7 @@ public class QuestionManager : MonoBehaviour
             {
                 int banderaRandom;
                 do{
-                    banderaRandom = Random.Range(0,options.Length);
+                    banderaRandom = Random.Range(0,OptionsSO.Length);
                 }while(banderaRandom == BanderaCorrecta);
             options[i].gameObject.GetComponentInChildren<TextMeshProUGUI>().text = OptionsSO[banderaRandom].Country;
             options[i].onClick.AddListener(()=>EvaluateQuestion(false));
